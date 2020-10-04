@@ -13,6 +13,8 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "ShaderProgram.h"
 
+//press the space bar to move the ball
+
 SDL_Window* displayWindow;
 bool gameIsRunning = true;
 
