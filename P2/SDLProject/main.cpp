@@ -13,8 +13,11 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "ShaderProgram.h"
 
+//press the space bar to move the ball
+
 SDL_Window* displayWindow;
 bool gameIsRunning = true;
+bool start = false;
 
 ShaderProgram program;
 glm::mat4 viewMatrix, projectionMatrix, ballMatrix, player1Matrix, player2Matrix;
@@ -122,9 +125,12 @@ void ProcessInput() {
 		}
 	}
 
-	if (keys[SDL_SCANCODE_SPACE]) {
-		ball_movement.x = 2.0f;
-		ball_movement.y = 2.0f;
+	if (start == false) {
+		if (keys[SDL_SCANCODE_SPACE]) {
+			ball_movement.x = 2.0f;
+			ball_movement.y = 2.0f;
+			start = true;
+		}
 	}
 
 
