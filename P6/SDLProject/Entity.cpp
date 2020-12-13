@@ -345,19 +345,7 @@ void Entity::Update(float deltaTime, Entity* player, Entity* objects,int objectC
 		AI(player);
 		CheckCollisionsY(player, 1);// Fix if needed
 		CheckCollisionsX(player, 1);// Fix if needed
-		if (collidedEnemyBottom == true) {
-			if (entityType == COIN) {
-				isActive = false;
-				player->goldCollected++;
-			}
-			if (entityType == GATE && player->gateOpen == true) {
-				player->collideDoor = true;
-			}
-			if (entityType == ENEMY) {
-				player->gotKilled = true;
-			}
-		}
-		else if (collidedEnemyTop || collidedEnemyLeft || collidedEnemyRight) {		
+		if (collidedEnemyBottom || collidedEnemyTop || collidedEnemyLeft || collidedEnemyRight) {
 			if (entityType == ENEMY) {
 				player->gotKilled = true;
 			}
@@ -368,6 +356,7 @@ void Entity::Update(float deltaTime, Entity* player, Entity* objects,int objectC
 			if (entityType == GATE && player->gateOpen == true) {
 				player->collideDoor = true;
 			}
+			collidedEnemyBottom = false;
 			collidedEnemyTop = false;
 			collidedEnemyLeft = false;
 			collidedEnemyRight = false;
