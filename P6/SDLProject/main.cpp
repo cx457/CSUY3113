@@ -22,15 +22,6 @@
 #include "Level2.h"
 
 
-// There are two levels for this game. For the first level, player simply collects the golds and escape
-// the zombies. There are 4 AIs in the first level. They will chase the player until they can't see the 
-// players. Also, there are 4 golds in this level. After collecting all the coins, a gate will be opened
-// to go to the next level. For the last level, there is only one AI and your goal is run(yes just run)! 
-// But this AI is a boss who ignores gravity(but player can't ignore gravity!). If a player die and still 
-// has lives, the player will go back to the born position. If you want to test the game, you can look
-// at the position of the golds and gate but it might cause the gametime to be less than 2 minutes if
-// player knows the position of everything.Thanks for playing!
-
 SDL_Window* displayWindow;
 bool gameIsRunning = true;
 
